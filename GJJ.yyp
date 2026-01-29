@@ -23,9 +23,11 @@
   },
   "name":"GJJ",
   "resources":[
+    {"id":{"name":"obj_colisao_pai","path":"objects/obj_colisao_pai/obj_colisao_pai.yy",},},
     {"id":{"name":"obj_MC","path":"objects/obj_MC/obj_MC.yy",},},
     {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},},
     {"id":{"name":"obj_tile1","path":"objects/obj_tile1/obj_tile1.yy",},},
+    {"id":{"name":"obj_tile2","path":"objects/obj_tile2/obj_tile2.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},},

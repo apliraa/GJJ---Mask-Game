@@ -23,8 +23,25 @@ else {
 }
 //
 
+
+
+
+
+// collision
+if (place_meeting(x + velh, y, obj_colisao_pai)){
+	while (!place_meeting(x + sign(velh), y, obj_colisao_pai)){
+		x = x + sign(velh);
+	}
+	velh = 0;
+}
+if (place_meeting(x, y + velv, obj_colisao_pai)){
+	while (!place_meeting(x, y + sign(velv), obj_colisao_pai)){
+		y = y + sign(velv);
+	}
+	velv = 0;
+}
+
+
+// move_player
 x += velh;
 y += velv;
-
-//interaction
-

@@ -2,7 +2,7 @@ velh = 0;
 velv = 0;
 image_angle = 90;
 mcDirection = 0;
-mcSpeed = 3;
+mcSpeed = 1;
 last_direction = mcDirection;
 
 currentState = playerStates.idleDown;
