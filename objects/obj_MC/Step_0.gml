@@ -9,8 +9,11 @@ var teclaCheck = teclaDireita - teclaEsquerda !=0 || teclaBaixo - teclaCima !=0 
 
 mcDirection = point_direction(0,0,teclaDireita - teclaEsquerda,teclaBaixo - teclaCima);
 
-velh = lengthdir_x(mcSpeed * teclaCheck, mcDirection);
-velv = lengthdir_y(mcSpeed * teclaCheck, mcDirection);
+//velh = lengthdir_x(mcSpeed * teclaCheck, mcDirection);
+//velv = lengthdir_y(mcSpeed * teclaCheck, mcDirection);
+
+velh = mcSpeed * (teclaDireita - teclaEsquerda)
+velv = mcSpeed * (teclaBaixo - teclaCima)
 
 // TEMP
 image_angle = currentState * 90;
@@ -52,10 +55,37 @@ move_and_collide(velh, velv, obj_colisao_pai);
 //colisao_rock
 
 if((currentState == playerStates.idleUp or currentState > 3) and place_meeting(x, y - 5, obj_rock)) {
-	if(keyboard_check(ord("E"))){
-		with(obj_rock) {
-			other.mcSpeed=1;
+	with(obj_rock) {
+		if(keyboard_check(ord("E"))){
+			other.mcSpeed = 1
 			y += sign(other.velv)
-		}
+		} else other.mcSpeed = 3
+	}
+}
+
+// BUGADO!!!
+if((currentState == playerStates.idleLeft or currentState > 3) and place_meeting(x - 5, y, obj_rock)) {
+	with(obj_rock) {
+		if(keyboard_check(ord("E"))){
+			x += other.velh
+		} else other.mcSpeed = 3
+	}
+}
+
+if((currentState == playerStates.idleDown or currentState > 3) and place_meeting(x, y + 5, obj_rock)) {
+	with(obj_rock) {
+		if(keyboard_check(ord("E"))){
+			other.mcSpeed = 1
+			y += sign(other.velv)
+		} else other.mcSpeed = 3
+	}
+}
+
+if((currentState == playerStates.idleRigth or currentState > 3) and place_meeting(x + 5, y, obj_rock)) {
+	with(obj_rock) {
+		if(keyboard_check(ord("E"))){
+			other.mcSpeed = 1
+			x += sign(other.velh)
+		} else other.mcSpeed = 3
 	}
 }
