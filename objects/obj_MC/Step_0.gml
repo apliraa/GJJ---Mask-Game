@@ -43,6 +43,16 @@ else {
 //	velv = 0;
 //}
 
+//if(instance_place())
+
 //y += velv;
 //x += velh;
 move_and_collide(velh, velv, obj_colisao_pai);
+
+//colisao_rock
+
+if((currentState == playerStates.idleUp or currentState == playerStates.walkingUp) and place_meeting(x, y - 1, obj_rock)) {
+	if(keyboard_check(ord("E"))){
+		obj_rock.x = x;
+	}
+}
