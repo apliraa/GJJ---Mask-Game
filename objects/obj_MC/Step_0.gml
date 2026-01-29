@@ -1,49 +1,19 @@
-//direction
-
-if (mcDirection == 0){
-	image_angle = 0;
-}
-
-if (mcDirection == 1){
-	image_angle = 90;
-
-}
-
-if (mcDirection == 2){
-	image_angle = 180;
-}
-
-if (mcDirection == 3){
-	image_angle = 270;
-}
-
 //move
 
-if (keyboard_check(ord("W"))) {
-	y = y - mcSpeed;
-	mcDirection = 0;
-	last_direction = mcDirection;
-}
+var teclaCima = keyboard_check(ord("W"));
+var teclaBaixo = keyboard_check(ord("S"));
+var teclaDireita = keyboard_check(ord("D"));
+var teclaEsquerda = keyboard_check(ord("A"));
 
-if (keyboard_check(ord("A"))) {
-	x = x - mcSpeed;
-	mcDirection = 1;
-	last_direction = mcDirection;
+var teclaCheck = teclaDireita - teclaEsquerda !=0 || teclaBaixo - teclaCima !=0 ;
 
-}
+mcDirection = point_direction(0,0,teclaDireita - teclaEsquerda,teclaBaixo - teclaCima);
 
-if (keyboard_check(ord("S"))) {
-	y = y + mcSpeed;
-	mcDirection = 2;
-	last_direction = mcDirection;
+velh = lengthdir_x(mcSpeed * teclaCheck, mcDirection);
+velv = lengthdir_y(mcSpeed * teclaCheck, mcDirection);
 
-}
-
-if (keyboard_check(ord("D"))) {
-	x = x + mcSpeed;
-	mcDirection = 3;
-	last_direction = mcDirection;
-}
+x += velh;
+y += velv;
 
 //interaction
 
