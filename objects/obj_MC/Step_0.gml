@@ -58,17 +58,23 @@ if((currentState == playerStates.idleUp or currentState > 3) and place_meeting(x
 	with(obj_rock) {
 		if(keyboard_check(ord("E"))){
 			other.mcSpeed = 1
-			y += sign(other.velv)
-		} else other.mcSpeed = 3
+			v_speed = other.velv
+		} else {
+			other.mcSpeed = 3
+			v_speed = 0
+		}
 	}
 }
 
-// BUGADO!!!
 if((currentState == playerStates.idleLeft or currentState > 3) and place_meeting(x - 5, y, obj_rock)) {
 	with(obj_rock) {
 		if(keyboard_check(ord("E"))){
-			x += other.velh
-		} else other.mcSpeed = 3
+			other.mcSpeed = 1
+			h_speed = other.velh
+		} else {
+			other.mcSpeed = 3
+			h_speed = 0
+		}
 	}
 }
 
@@ -76,8 +82,11 @@ if((currentState == playerStates.idleDown or currentState > 3) and place_meeting
 	with(obj_rock) {
 		if(keyboard_check(ord("E"))){
 			other.mcSpeed = 1
-			y += sign(other.velv)
-		} else other.mcSpeed = 3
+			v_speed = other.velv
+		} else {
+			other.mcSpeed = 3
+			v_speed = 0
+		}
 	}
 }
 
@@ -85,7 +94,10 @@ if((currentState == playerStates.idleRigth or currentState > 3) and place_meetin
 	with(obj_rock) {
 		if(keyboard_check(ord("E"))){
 			other.mcSpeed = 1
-			x += sign(other.velh)
-		} else other.mcSpeed = 3
+			h_speed = other.velh
+		} else {
+			other.mcSpeed = 3
+			h_speed = 0
+		}
 	}
 }
