@@ -97,3 +97,4 @@ if((currentState == playerStates.idleRigth or currentState > 3) and place_meetin
 		}
 	}
 }
+
