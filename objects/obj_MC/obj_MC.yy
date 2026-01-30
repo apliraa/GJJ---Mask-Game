@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_MC",
-    "path":"sprites/spr_MC/spr_MC.yy",
+    "name":"spr_mcIdle",
+    "path":"sprites/spr_mcIdle/spr_mcIdle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,6 +1,6 @@
 velh = 0;
 velv = 0;
-image_angle = 90;
+//image_angle = 180;
 mcDirection = 0;
 mcSpeed = 3;
 last_direction = mcDirection;
@@ -19,5 +19,19 @@ enum playerStates {
 	walkingUp, //5
 	walkingLeft, //6
 	walkingDown, //7
-	walkingRigth //8
+	walkingRigth,//8
+	walkingUpRight//9
 }
+
+//camera 
+zoomF = 1;
+
+
+
+
+
+
+
+
+
+

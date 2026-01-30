@@ -16,14 +16,26 @@ velh = mcSpeed * (teclaDireita - teclaEsquerda)
 velv = mcSpeed * (teclaBaixo - teclaCima)
 
 // TEMP
-image_angle = currentState * 90;
+//image_angle = currentState * 90;
 if(mcDirection == 0 and currentState >= 3) currentState -= 4;
 else {
-	if(teclaCima) currentState = playerStates.walkingUp;
+	if(teclaCima)currentState = playerStates.walkingUp;
 	if(teclaBaixo) currentState = playerStates.walkingDown;
 	if(teclaDireita) currentState = playerStates.walkingRigth;
 	if(teclaEsquerda) currentState = playerStates.walkingLeft;
+	if(teclaDireita and teclaCima) currentState = playerStates.walkingUpRight;
 }
+
+if currentState = playerStates.idleDown{sprite_index = spr_mcIdle}
+if currentState = playerStates.idleUp{sprite_index = spr_mcIdleUp}
+if currentState = playerStates.idleRigth{sprite_index = spr_mcIdleSidedown; image_xscale = 1}
+if currentState = playerStates.idleLeft{sprite_index = spr_mcIdleSidedown; image_xscale= -1}
+if currentState = playerStates.walkingDown{sprite_index = spr_mcWalk}
+if currentState = playerStates.walkingUp{sprite_index = spr_mcWalkUp}
+if currentState = playerStates.walkingLeft{sprite_index = spr_mcWalkSideDownLeft}
+if currentState = playerStates.walkingRigth{sprite_index = spr_mcWalkSidedown}
+//if currentState = playerStates.walkingUpRight{sprite_index = spr_mcWalkSideup}
+
 //
 
 // collision
@@ -126,6 +138,7 @@ y = ystart;
         }
     }
  }
+
 
 
 

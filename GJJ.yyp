@@ -59,6 +59,7 @@
     {"id":{"name":"spr_mcPushUp","path":"sprites/spr_mcPushUp/spr_mcPushUp.yy",},},
     {"id":{"name":"spr_mcWalk","path":"sprites/spr_mcWalk/spr_mcWalk.yy",},},
     {"id":{"name":"spr_mcWalkSidedown","path":"sprites/spr_mcWalkSidedown/spr_mcWalkSidedown.yy",},},
+    {"id":{"name":"spr_mcWalkSideDownLeft","path":"sprites/spr_mcWalkSideDownLeft/spr_mcWalkSideDownLeft.yy",},},
     {"id":{"name":"spr_mcWalkSideup","path":"sprites/spr_mcWalkSideup/spr_mcWalkSideup.yy",},},
     {"id":{"name":"spr_mcWalkUp","path":"sprites/spr_mcWalkUp/spr_mcWalkUp.yy",},},
     {"id":{"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},},
