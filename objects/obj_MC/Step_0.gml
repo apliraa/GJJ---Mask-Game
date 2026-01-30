@@ -26,10 +26,6 @@ else {
 }
 //
 
-
-
-
-
 // collision
 //if (place_meeting(x + velh, y, obj_colisao_pai)){
 //	while (!place_meeting(x + sign(velh), y, obj_colisao_pai)){
@@ -37,7 +33,6 @@ else {
 //	}
 //	velh = 0;
 //}
-
 
 //if (place_meeting(x, y + velv, obj_colisao_pai)){
 //	while (!place_meeting(x, y + sign(velv), obj_colisao_pai)){
@@ -51,6 +46,7 @@ else {
 //y += velv;
 //x += velh;
 move_and_collide(velh, velv, obj_colisao_pai);
+
 
 //colisao_rock
 
