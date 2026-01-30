@@ -5,7 +5,7 @@ mcDirection = 0;
 mcSpeed = 3;
 last_direction = mcDirection;
 currentState = playerStates.idleDown;
-maskState = 0;
+maskState = 4;
 reflexOn = 0;
 
 
