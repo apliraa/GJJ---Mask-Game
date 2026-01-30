@@ -62,11 +62,12 @@ if((currentState == playerStates.idleUp or currentState > 3) and place_meeting(x
 	}
 }
 
-if((currentState == playerStates.idleLeft or currentState > 3) and place_meeting(x - 5, y, obj_rock)) {
+if((currentState == playerStates.idleLeft or currentState > 3) and place_meeting(x - 10, y, obj_rock)) {
 	with(obj_rock) {
 		if(keyboard_check(ord("E"))){
 			other.mcSpeed = 1
-			h_speed = other.velh
+			if(other.velh < 0) h_speed = other.velh
+			else h_speed = other.velh * 1.5
 		} else {
 			other.mcSpeed = 3
 			h_speed = 0
