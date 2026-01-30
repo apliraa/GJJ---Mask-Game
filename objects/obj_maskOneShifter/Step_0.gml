@@ -10,5 +10,5 @@ if(worldState == 0 ){
 	obj_floor.image_blend = c_yellow;
 	obj_wall.image_blend = c_green;
 	obj_worldTwoWall.visible = false;
-	obj_worldTwoWall.mask_index = 1;
+	obj_worldTwoWall.mask_index = 0;
 }

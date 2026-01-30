@@ -107,3 +107,10 @@ if(ladderCheck != noone){
 		room_goto(SalaUm);
 	}
 }
+
+//reset
+if(keyboard_check_pressed(ord("R"))){
+room_restart();	
+x = xstart;
+y = ystart;
+}
