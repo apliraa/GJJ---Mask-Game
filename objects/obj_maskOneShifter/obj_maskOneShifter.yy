@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite7",
-    "path":"sprites/Sprite7/Sprite7.yy",
+    "name":"spr_maskOneShifter",
+    "path":"sprites/spr_maskOneShifter/spr_maskOneShifter.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -98,3 +98,11 @@ if((currentState == playerStates.idleRigth or currentState > 3) and place_meetin
 	}
 }
 
+//interaction Ladder
+
+var ladderCheck = instance_place(x+10, y+10, obj_ladderSala1);
+if(ladderCheck != noone){
+	if(keyboard_check_pressed((ord("E")))){
+		room_goto(SalaUm);
+	}
+}
