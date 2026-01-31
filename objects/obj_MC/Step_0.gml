@@ -36,7 +36,7 @@ if (velh == 0 && velv == 0) {
 	if (h_input == -1 && velh != 0) { currentState = playerStates.walkingLeft; last_direction = playerStates.idleLeft; }
 }
 
-show_debug_message(string(last_direction) + ", " +  string(velh) + ", " + string(velv))
+//show_debug_message(string(last_direction) + ", " +  string(velh) + ", " + string(velv))
 
 if (currentState == playerStates.idleDown) { sprite_index = spr_mcIdle; }
 else if (currentState == playerStates.idleUp) { sprite_index = spr_mcIdleUp; }

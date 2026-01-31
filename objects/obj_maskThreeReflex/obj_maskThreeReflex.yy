@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_maskThreeReflex",
-    "path":"sprites/spr_maskThreeReflex/spr_maskThreeReflex.yy",
+    "name":"Sprite32",
+    "path":"sprites/Sprite32/Sprite32.yy",
   },
   "spriteMaskId":null,
   "visible":true,

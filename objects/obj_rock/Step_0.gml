@@ -7,7 +7,12 @@ if(detectorCheck == noone){
 		v_speed = 0;
 }
 	
-var detectorButton = instance_place(x, y, obj_button)
-if (detectorButton= noone){
-	//obj_door.mask_index = 0;
+var detectorButton = place_meeting(x, y, obj_button)
+if (detectorButton){
+	obj_door.mask_index = 0;
+} else{
+	obj_door.mask_index = 1;
 }
+	
+
+	

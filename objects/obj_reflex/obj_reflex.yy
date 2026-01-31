@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_maskTwoBlock",
-  "eventList":[],
+  "%Name":"obj_reflex",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_maskTwoBlock",
+  "name":"obj_reflex",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_masktwoBlock",
-    "path":"sprites/spr_masktwoBlock/spr_masktwoBlock.yy",
+    "name":"spr_mcIdle",
+    "path":"sprites/spr_mcIdle/spr_mcIdle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
