@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_ladderSala1",
+    "path":"sprites/spr_ladderSala1/spr_ladderSala1.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
