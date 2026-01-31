@@ -5,36 +5,49 @@ var teclaBaixo = keyboard_check(ord("S"));
 var teclaDireita = keyboard_check(ord("D"));
 var teclaEsquerda = keyboard_check(ord("A"));
 
-var teclaCheck = teclaDireita - teclaEsquerda !=0 || teclaBaixo - teclaCima !=0 ;
+// update last_direction using the enum idle states (keeps facing consistent when idle)
+if (teclaCima) last_direction = playerStates.idleUp;
+if (teclaBaixo) last_direction = playerStates.idleDown;
+if (teclaEsquerda) last_direction = playerStates.idleLeft;
+if (teclaDireita) last_direction = playerStates.idleRigth;
 
 mcDirection = point_direction(0,0,teclaDireita - teclaEsquerda,teclaBaixo - teclaCima);
 
-//velh = lengthdir_x(mcSpeed * teclaCheck, mcDirection);
-//velv = lengthdir_y(mcSpeed * teclaCheck, mcDirection);
+v_input = teclaBaixo - teclaCima; // baixo = 1, cima = -1, 0 = parado v
+h_input = teclaDireita - teclaEsquerda; // direita = 1, esq = -1, 0 = parado h
 
-velh = mcSpeed * (teclaDireita - teclaEsquerda)
-velv = mcSpeed * (teclaBaixo - teclaCima)
+velh = mcSpeed * h_input;
+velv = mcSpeed * v_input;
 
-// TEMP
-//image_angle = currentState * 90;
-if(mcDirection == 0 and currentState >= 3) currentState -= 4;
-else {
-	if(teclaCima)currentState = playerStates.walkingUp;
-	if(teclaBaixo) currentState = playerStates.walkingDown;
-	if(teclaDireita) currentState = playerStates.walkingRigth;
-	if(teclaEsquerda) currentState = playerStates.walkingLeft;
-	if(teclaDireita and teclaCima) currentState = playerStates.walkingUpRight;
+if (velh == 0 && velv == 0) {
+	// idle: restore the previously remembered idle direction
+	switch (last_direction) {
+		case playerStates.idleUp: currentState = playerStates.idleUp; break;
+		case playerStates.idleDown: currentState = playerStates.idleDown; break;
+		case playerStates.idleLeft: currentState = playerStates.idleLeft; break;
+		case playerStates.idleRigth: currentState = playerStates.idleRigth; break;
+		default: currentState = playerStates.idleDown; break;
+	}
+} else {
+	// moving: set walking states and update last_direction accordingly
+	if (h_input == 1 && velh != 0) { currentState = playerStates.walkingRigth; last_direction = playerStates.idleRigth; }
+	if (v_input == 1 && velv != 0) { currentState = playerStates.walkingDown; last_direction = playerStates.idleDown; }
+	if (v_input == -1 && velv != 0) { currentState = playerStates.walkingUp; last_direction = playerStates.idleUp; }
+	if (h_input == -1 && velh != 0) { currentState = playerStates.walkingLeft; last_direction = playerStates.idleLeft; }
 }
 
-if currentState = playerStates.idleDown{sprite_index = spr_mcIdle}
-if currentState = playerStates.idleUp{sprite_index = spr_mcIdleUp}
-if currentState = playerStates.idleRigth{sprite_index = spr_mcIdleSidedown; image_xscale = 1}
-if currentState = playerStates.idleLeft{sprite_index = spr_mcIdleSidedown; image_xscale= -1}
-if currentState = playerStates.walkingDown{sprite_index = spr_mcWalk}
-if currentState = playerStates.walkingUp{sprite_index = spr_mcWalkUp}
-if currentState = playerStates.walkingLeft{sprite_index = spr_mcWalkSideDownLeft}
-if currentState = playerStates.walkingRigth{sprite_index = spr_mcWalkSidedown}
-//if currentState = playerStates.walkingUpRight{sprite_index = spr_mcWalkSideup}
+show_debug_message(string(last_direction) + ", " +  string(velh) + ", " + string(velv))
+
+if (currentState == playerStates.idleDown) { sprite_index = spr_mcIdle; }
+else if (currentState == playerStates.idleUp) { sprite_index = spr_mcIdleUp; }
+// swapped: ensure visual left/right match the state names
+else if (currentState == playerStates.idleRigth) { sprite_index = spr_mcIdleSidedown; }
+else if (currentState == playerStates.idleLeft) { sprite_index = spr_mcIdleSidedownLeft; }
+else if (currentState == playerStates.walkingDown) { sprite_index = spr_mcWalk; }
+else if (currentState == playerStates.walkingUp) { sprite_index = spr_mcWalkUp; }
+else if (currentState == playerStates.walkingLeft) { sprite_index = spr_mcWalkSideDownLeft; }
+else if (currentState == playerStates.walkingRigth) { sprite_index = spr_mcWalkSidedown; }
+
 
 //
 

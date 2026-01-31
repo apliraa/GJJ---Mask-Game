@@ -1,11 +1,11 @@
 {
   "$GMSprite":"v2",
   "%Name":"spr_mcWalkUp",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":40,
   "bbox_left":14,
   "bbox_right":33,
-  "bbox_top":7,
+  "bbox_top":6,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

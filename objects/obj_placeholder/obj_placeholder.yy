@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_camera",
+  "%Name":"obj_placeholder",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_camera",
+  "name":"obj_placeholder",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_placeholder",
+    "path":"sprites/spr_placeholder/spr_placeholder.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

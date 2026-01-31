@@ -9,5 +9,5 @@ if(detectorCheck == noone){
 	
 var detectorButton = instance_place(x, y, obj_button)
 if (detectorButton= noone){
-	obj_door.mask_index = -1;
+	//obj_door.mask_index = 0;
 }
