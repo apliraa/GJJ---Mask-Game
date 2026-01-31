@@ -20,7 +20,7 @@ mcSpeed = 3;
 // use enum-based last_direction so Step can set idle states consistently
 last_direction = playerStates.idleDown;
 currentState = playerStates.idleDown;
-maskState = 4;
+maskState = 2;
 reflexOn = 0;
 tileset_collision = layer_tilemap_get_id("Tiles_Wall");
 v_input = pointer_null;
@@ -32,6 +32,16 @@ enum Direction {
 	Left, //3
 	Right, //4
 }
+
+
+var lay_id = layer_get_id("tiles_wall_past");
+var lay_id2 = layer_get_id("tiles_wall_past_side");
+var lay_id3 = layer_get_id("tiles_floor_past");
+
+
+layer_set_visible(lay_id, false)
+layer_set_visible(lay_id2, false)
+layer_set_visible(lay_id3, false);
 
 //camera 
 zoomF = 1;

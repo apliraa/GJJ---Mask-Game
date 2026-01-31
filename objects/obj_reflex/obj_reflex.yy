@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mcIdle",
-    "path":"sprites/spr_mcIdle/spr_mcIdle.yy",
+    "name":"spr_maskThreeReflex",
+    "path":"sprites/spr_maskThreeReflex/spr_maskThreeReflex.yy",
   },
   "spriteMaskId":null,
   "visible":true,

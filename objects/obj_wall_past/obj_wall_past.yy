@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_maskThreeReflex",
+  "%Name":"obj_wall_past",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_maskThreeReflex",
+  "name":"obj_wall_past",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_colisao_pai",
+    "path":"objects/obj_colisao_pai/obj_colisao_pai.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,11 +31,14 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
-    "name":"Sprite32",
-    "path":"sprites/Sprite32/Sprite32.yy",
+    "name":"spr_wall_past",
+    "path":"sprites/spr_wall_past/spr_wall_past.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "wall",
+  ],
   "visible":true,
 }

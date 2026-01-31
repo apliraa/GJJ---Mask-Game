@@ -1,6 +1,8 @@
-if(instance_exists(obj_reflex)){
-	x -= obj_MC.velh
-	y = obj_MC.velv
-	
-	//obj_reflex.image_xscale = -image_xscale;
+if (instance_exists(obj_MC)) {
+   
+    x -= obj_MC.x+10;
+    y += obj_MC.x+10;
+    
+  
+    //image_xscale = -obj_MC.image_xscale;
 }
