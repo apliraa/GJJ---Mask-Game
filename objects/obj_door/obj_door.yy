@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"Sprite40",
-    "path":"sprites/Sprite40/Sprite40.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

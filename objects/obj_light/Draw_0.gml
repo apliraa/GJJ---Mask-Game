@@ -1,6 +1,8 @@
 // ==============================
 // PONTOS INICIAL E FINAL
 // ==============================
+show_debug_message("DBG: obj_light Draw start - x=" + string(x) + " y=" + string(y) + " mouse_x=" + string(mouse_x) + " mouse_y=" + string(mouse_y));
+// raycast start
 var x1 = x;
 var y1 = y;
 var x2 = mouse_x;

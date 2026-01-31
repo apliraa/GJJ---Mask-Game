@@ -5,6 +5,9 @@ var teclaBaixo = keyboard_check(ord("S"));
 var teclaDireita = keyboard_check(ord("D"));
 var teclaEsquerda = keyboard_check(ord("A"));
 
+// debug: start of step
+show_debug_message("DBG: obj_MC Step start - x=" + string(x) + " y=" + string(y) + " mcSpeed=" + string(mcSpeed));
+
 // update last_direction using the enum idle states (keeps facing consistent when idle)
 if (teclaCima) last_direction = playerStates.idleUp;
 if (teclaBaixo) last_direction = playerStates.idleDown;
@@ -18,6 +21,9 @@ h_input = teclaDireita - teclaEsquerda; // direita = 1, esq = -1, 0 = parado h
 
 velh = mcSpeed * h_input;
 velv = mcSpeed * v_input;
+
+// debug: after input -> velocities
+show_debug_message("DBG: velocities computed velh=" + string(velh) + " velv=" + string(velv));
 
 if (velh == 0 && velv == 0) {
 	// idle: restore the previously remembered idle direction
@@ -51,26 +57,44 @@ else if (currentState == playerStates.walkingRigth) { sprite_index = spr_mcWalkS
 
 //
 
-// collision
-//if (place_meeting(x + velh, y, obj_colisao_pai)){
-//	while (!place_meeting(x + sign(velh), y, obj_colisao_pai)){
-//		x = x + sign(velh);
-//	}
-//	velh = 0;
-//}
+// collision & movement: axis-aligned per-pixel resolution using place_meeting
+// Move horizontally first, one pixel at a time, stopping at collisions
+// debug: before horizontal movement
+show_debug_message("DBG: before movement - x=" + string(x) + " y=" + string(y) + " velh=" + string(velh) + " velv=" + string(velv));
 
-//if (place_meeting(x, y + velv, obj_colisao_pai)){
-//	while (!place_meeting(x, y + sign(velv), obj_colisao_pai)){
-//		y = y + sign(velv);
-//	}
-//	velv = 0;
-//}
+if (velh != 0) {
+	var move_h = abs(velh);
+	var dir_h = sign(velh);
+	while (move_h > 0) {
+		if (!place_meeting(x + dir_h, y, obj_colisao_pai)) {
+			x += dir_h;
+		} else {
+			// hit a wall, stop horizontal movement
+			velh = 0;
+			break;
+		}
+		move_h -= 1;
+	}
+}
 
-//if(instance_place())
+// Then move vertically, one pixel at a time
+if (velv != 0) {
+	var move_v = abs(velv);
+	var dir_v = sign(velv);
+	while (move_v > 0) {
+		if (!place_meeting(x, y + dir_v, obj_colisao_pai)) {
+			y += dir_v;
+		} else {
+			// hit a wall, stop vertical movement
+			velv = 0;
+			break;
+		}
+		move_v -= 1;
+	}
+}
 
-//y += velv;
-//x += velh;
-move_and_collide(velh, velv, [obj_colisao_pai, tileset_collision]);
+// debug: after movement
+show_debug_message("DBG: after movement - x=" + string(x) + " y=" + string(y) + " velh=" + string(velh) + " velv=" + string(velv));
 
 
 //colisao_rock
@@ -148,9 +172,12 @@ if (keyboard_check_pressed(ord("E"))) {
 			show_debug_message("obj criado")
             var reflex = instance_create_depth(x, y, 100, obj_reflex);
            // reflex.image_blend = c_aqua;
-        } else {
-            instance_destroy(obj_reflex);
-        }
+		} else {
+			// destroy all instances of obj_reflex safely
+			with (obj_reflex) {
+				instance_destroy();
+			}
+		}
     }
 }
 

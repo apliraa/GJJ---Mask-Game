@@ -19,11 +19,14 @@ layer_set_visible(lay_id2, true)
 layer_set_visible(lay_id3, true);
 	layer_set_visible(lay_id4, false)
 	layer_set_visible(lay_id5, false)
-	obj_wall.mask_index = 0;
-	obj_wall_past.mask_index = 1;
+	// set mask_index on instances safely
+	with (obj_wall) { mask_index = 0; }
+	with (obj_wall_past) { mask_index = 1; }
 	
 	
 }
+
+show_debug_message("DBG: obj_maskOneShifter Step - worldState=" + string(worldState));
 
 
 
@@ -46,11 +49,11 @@ var lay_id4 = layer_get_id("tiles_floor_present");
 
 var lay_id = layer_get_id("tiles_wall_past");
 if(layer_get_visible(lay_id)){
-	obj_wall_past.mask_index = 1;
-	obj_wall.mask_index = 0;
+    with (obj_wall_past) { mask_index = 1; }
+    with (obj_wall) { mask_index = 0; }
 }else{
-	obj_wall_past.mask_index = 0;
-	obj_wall.mask_index = 1;
+    with (obj_wall_past) { mask_index = 0; }
+    with (obj_wall) { mask_index = 1; }
 }
 
 

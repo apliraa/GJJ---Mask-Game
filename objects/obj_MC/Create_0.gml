@@ -22,7 +22,7 @@ last_direction = playerStates.idleDown;
 currentState = playerStates.idleDown;
 maskState = 2;
 reflexOn = 0;
-tileset_collision = layer_tilemap_get_id("Tiles_Wall");
+//tileset_collision = layer_tilemap_get_id("Tiles_Wall");
 v_input = pointer_null;
 h_input = pointer_null;
 
@@ -45,6 +45,9 @@ layer_set_visible(lay_id3, false);
 
 //camera 
 zoomF = 1;
+
+// debug
+show_debug_message("DBG: obj_MC Create - initialized (mcSpeed=" + string(mcSpeed) + ")");
 
 
 

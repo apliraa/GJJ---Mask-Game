@@ -1,11 +1,8 @@
-move_and_collide(h_speed, v_speed, obj_MC)
-
-//pedra nao tem velocidade se não estiver interagindo
-var detectorCheck = instance_place(x + obj_MC.velh, y + obj_MC.velv, obj_MC);
-if(detectorCheck == noone){
-		h_speed = 0;
-		v_speed = 0;
-}
+// TEMP: stubbed out to isolate crash source
+show_debug_message("DBG: obj_rock Step SKIPPED (stub) - x=" + string(x) + " y=" + string(y));
+// keep rock stationary while debugging
+h_speed = 0;
+v_speed = 0;
 	
 //var detectorButton = place_meeting(x, y, obj_button)
 //if (detectorButton){
